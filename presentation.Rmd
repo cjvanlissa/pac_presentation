@@ -1,0 +1,126 @@
+---
+title: "Eliminating researcher degrees of freedom through Preregistration As Code (PAC)"
+author: "Caspar J. Van Lissa<sup>1</sup>, Aaron Peikert<sup>2</sup>, Andreas M. Brandmaier<sup>2</sup>"
+date: "<p><sup>1</sup>: Utrecht University, dept. Methodology & Statistics<br><sup>2</sup>: Center for Lifespan Psychology, Max Planck Institute for Human Development"
+knit: (function(inputFile, encoding) {
+  rmarkdown::render(inputFile, encoding = encoding, output_dir = "docs") })
+output: 
+  ioslides_presentation:
+    widescreen: true
+---
+
+```{r setup, include=FALSE}
+    #css: slide.css
+#bibliography      : ["veni_sysrev.bib"]
+#css: https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Defining preregistration
+
+> Specifying your research plan in advance of your study and submitting it to a registry.
+
+**Goal:** Separating hypothesis-generating (exploratory) from hypothesis-testing (confirmatory) research. 
+
+Subgoals:
+
+* Planning tool
+* Improve quality and transparency
+* Clearly report your study
+* Set boundaries for agreed-upon work (PhD student, statistical collaborator)
+
+## Working reproducibly
+
+WORCS: A Workflow for Open Reproducible Code in Science [www.developmentaldatascience.org/worcs](www.developmentaldatascience.org/worcs)
+
+1. Dynamic document generation
+    * Rmarkdown paper includes prose and analysis code
+    * Paper can be reproduced / results updated with one click
+2. Version control
+    * Git tracks all changes since start of project
+    * Project can be public on GitHub
+    * Tag "release": Time capsule at specific stage of project, e.g. "pre-registration"
+3. Dependency management
+    * Record or container with all software needed to reproduce
+
+## Preregistration in WORCS
+
+1. Complete a prereg template in Rmarkdown format `prereg.Rmd`
+2. Commit and push to GitHub
+3. Tag the release as `preregistration`
+4. Optional: Render Rmarkdown to PDF and upload to OSF.io / aspredicted.org
+5. Collect data
+6. Write `manuscript.Rmd` with planned analyses
+
+## Shortcomings of preregistrations
+
+* Extra work
+* Residual ambiguity
+    + Unintentional
+    + Strategic
+* Straight-jacket: Can "force" researcher to stick with bad plans
+* Researchers often not trained in preregistration
+    + In neither writing nor reviewing thereof
+* Not all preregistration templates are relevant for all research (e.g., secondary analysis)
+* Difficult to compare with final manuscript, because they are in different formats
+
+## Solution: PAC
+
+1. Preregister Rmarkdown with draft of manuscript
+2. Include code for planned analyses
+3. Use fake$^*$ data to obtain preliminary results
+4. Draft report based on preliminary results
+
+After collecting real data
+
+5. Re-compile Rmarkdown and see final results
+6. Write Results and Discussion
+
+$*$ = Simulated, or synthetic, or from prior study, or shuffle some real data!
+
+## Advantages
+
+* Extra work
+    + You're not writing a separate document, but an early version of the final manuscript
+    + You need to write code to analyze the data anyway
+* Ambiguity
+    + Unintentional: You become aware of ambiguity in your planned analysis when you start actually running it 
+    + Strategic: Reduced; there's a straightforward game plan
+* Straight-jacket: Can "force" researcher to stick with bad plans
+    + You can deviate from planned analyses; create a Git commit with the changes
+
+## Advantages 2
+
+* Researchers often not trained in preregistration
+    + But we are trained in writing papers! Sticking with that format is easier to write and review
+* Not all preregistration templates are relevant for all research (e.g., secondary analysis)
+    + Writing a preregistration as draft manuscript ensures all sections are directly relevant
+* Difficult to compare with final manuscript, because they are in different formats
+    + You can literally compare the two versions (using Git diff) to see how the planned analyses were executed
+
+## Limitations
+
+* Can't cover all contingencies; deviations will be necessary
+    + But version control makes it crystal clear what has been changed
+Alternative 1.3: Integrate the comparison of preregistration and manuscript into the review process.
+  Rebuke 1.3.1: Reviewer already donate much of their time to assure correctness.
+  Rebuke 1.3.2: Authors are in no position to decide if their deviations are meaningfull.
+Limitation 1.4: Much code that never is actually used.
+
+# Problem 2 --- Writing a Preregistration
+
+## Arguments
+
+Claim 2: Preregistrations are difficult to produce.
+  Reason 2.1: Researcher require training in doing preregistrations.
+    Evidence 2.1.1: Todo: Find prereg tutorials.
+  Reason 2.2. There are many standards for preregistrations to accommodate different needs and research questions.
+    Evidence 2.2.1: Todo: Create comprehensive list of preregistration standards.
+  Evidence 2.3: Todo: find survey on how much effort a preregistration is.
+
+* Simulating data is difficult/requires much effort
+    + But super useful, e.g. power analysis
+    + Statistical co-author
+    + Collect data first, shuffle dependent variable
+* Requires reproducible/reusable workflow
+    + But this ensures correctness/reliability/reusability of your work
