@@ -68,8 +68,8 @@ WORCS: A Workflow for Open Reproducible Code in Science [www.developmentaldatasc
 
 1. Preregister Rmarkdown with draft of manuscript
 2. Include code for planned analyses
-3. Use fake$^*$ data to obtain preliminary results
-4. Draft report based on preliminary results
+3. Use fake$^*$ data to obtain mock results
+4. Draft report based on mock results
 
 After collecting real data
 
