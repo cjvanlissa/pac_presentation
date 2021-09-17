@@ -80,23 +80,20 @@ $*$ = Simulated, or synthetic, or from prior study, or shuffle some real data!
 
 ## Advantages
 
-* Extra work
+* Less work
     + You're not writing a separate document, but an early version of the final manuscript
     + You need to write code to analyze the data anyway
-* Ambiguity
-    + Unintentional: You become aware of ambiguity in your planned analysis when you start actually running it 
-    + Strategic: Reduced; there's a straightforward game plan
-* Straight-jacket: Can "force" researcher to stick with bad plans
+* unambiguous
+    + Unintentional ambiguity ↓: You become aware of ambiguity in your planned analysis when you start actually running it 
+    + Strategic ambiguity ↓: there's a straightforward game plan
+* No Straight-jacket: Can't "force" researcher to stick with bad plans
     + You can deviate from planned analyses; create a Git commit with the changes
 
 ## Advantages 2
 
-* Researchers often not trained in preregistration
-    + But we are trained in writing papers! Sticking with that format is easier to write and review
-* Not all preregistration templates are relevant for all research (e.g., secondary analysis)
-    + Writing a preregistration as draft manuscript ensures all sections are directly relevant
-* Difficult to compare with final manuscript, because they are in different formats
-    + You can literally compare the two versions (using Git diff) to see how the planned analyses were executed
+* Researchers are trained in writing papers, not preregistrations! Sticking with that format is easier to write and review
+* Writing a preregistration as draft manuscript ensures all sections are directly relevant
+* You can literally compare the two versions (using Git diff) to see how the planned analyses were executed
     
 ## Example
 
